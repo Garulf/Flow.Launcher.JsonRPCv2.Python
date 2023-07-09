@@ -2,11 +2,18 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 
+FONT_FAMILY = "/Resources/#Segoe Fluent Icons"
+
 @dataclass
 class JsonRPCAction:
     id: int
     method: str
     parameters: list = field(default_factory=list)
+
+@dataclass
+class Glyph:
+    glyph: str
+    fontFamily: str = FONT_FAMILY
 
 
 @dataclass
@@ -19,4 +26,5 @@ class Result:
     subtitleTooltip: str = ""
     copyText: str = ""
     jsonRPCAction: JsonRPCAction | None = None
+    glyph: Glyph | None = None
     score: int | None = None
