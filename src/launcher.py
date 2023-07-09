@@ -9,5 +9,5 @@ class Launcher:
     async def fuzzy_search(self, search: str, title: str):
         return await self._plugin._client.request("FuzzySearch", [search, title])
 
-    async def update_results(self, raw_query, results):
+    async def update_results(self, raw_query: str, results):
         await self._plugin._client.request("UpdateResults", [raw_query, results])
