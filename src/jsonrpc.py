@@ -166,7 +166,7 @@ class JsonRPCClient:
         self.writer.write(encode_error(request["id"], err))
         await self.writer.drain()
 
-    async def start_listening(self, methods, reader: StreamReader, writer: StreamWriter):
+    async def start_listening(self, methods: dict[str, Method], reader: StreamReader, writer: StreamWriter):
         reader, writer = await aioconsole.get_standard_streams()
         self.reader = reader
         self.writer = writer
