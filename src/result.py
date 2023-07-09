@@ -1,5 +1,6 @@
 from __future__ import annotations
 from dataclasses import dataclass, field
+from multiprocessing import context
 
 
 FONT_FAMILY = "/Resources/#Segoe Fluent Icons"
@@ -25,6 +26,7 @@ class Result:
     titleTooltip: str = ""
     subtitleTooltip: str = ""
     copyText: str = ""
+    contextData: list | None = None
     jsonRPCAction: JsonRPCAction | None = None
     glyph: Glyph | None = None
     score: int | None = None
