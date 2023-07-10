@@ -1,12 +1,15 @@
 from __future__ import annotations
-from typing import Callable
+from typing import Callable, Dict, List
 from functools import wraps
 
 import aioconsole
 
 
 from jsonrpc import JsonRPCClient
-from method import Method
+from result import Result
+
+
+Method = Callable[[Dict[str, object]], List[Result]]
 
 
 class Plugin:
